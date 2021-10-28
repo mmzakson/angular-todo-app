@@ -1,0 +1,36 @@
+<div class="container">
+  <h3>Todo List</h3>
+
+  <table class="highlight">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Completed</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let todo of todos">
+        <td>{{ this.todo.id }}</td>
+        <td>{{ this.todo.title }}</td>
+        <td>{{ this.todo.completed }}</td>
+        <td>
+          <button class="btn-floating waves-effect waves-light blue">
+            <i class="material-icons">check</i>
+          </button>
+        </td>
+        <td>
+          <button
+            (click)="deleteTodo(this.todo.id)"
+            class="btn-floating waves-effect waves-light red"
+          >
+            <i class="material-icons">delete</i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

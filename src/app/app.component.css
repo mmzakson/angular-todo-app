@@ -1,0 +1,27 @@
+.container {
+  width: 500px;
+  margin: auto;
+}
+
+.todo-list li {
+  background-color: aliceblue;
+  padding: 8px 10px;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: rgb(143, 142, 140);
+  font-size: 18px;
+}
+.todo-list > li > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-list button {
+  margin-left: 10px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: end;
+}
