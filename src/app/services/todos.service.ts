@@ -20,4 +20,8 @@ export class TodosService {
     const deleteEndPoint = `https://jsonplaceholder.typicode.com/todos/${todoId}`;
     return this.http.delete(deleteEndPoint);
   }
+
+  toggleComplete(todoId, completed) {
+    return this.http.patch(`${this._url}/${todoId}`, { completed: !completed });
+  }
 }

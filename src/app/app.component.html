@@ -18,7 +18,10 @@
         <td>{{ this.todo.title }}</td>
         <td>{{ this.todo.completed }}</td>
         <td>
-          <button class="btn-floating waves-effect waves-light blue">
+          <button
+            (click)="toggleComplete(this.todo.id, this.todo.completed)"
+            class="btn-floating waves-effect waves-light blue"
+          >
             <i class="material-icons">check</i>
           </button>
         </td>

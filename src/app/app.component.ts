@@ -8,6 +8,7 @@ import { TodosService } from './services/todos.service';
 })
 export class AppComponent implements OnInit {
   public todos = [];
+  public isComplete: any;
 
   constructor(private _todosService: TodosService) {}
   ngOnInit() {
@@ -15,8 +16,15 @@ export class AppComponent implements OnInit {
   }
 
   deleteTodo(todoId) {
-    this._todosService.deleteTodo(todoId).subscribe(() => {
-      console.log(todoId);
+    this._todosService.deleteTodo(todoId).subscribe((res) => {
+      this.todos = this.todos.filter((item) => item.id !== todoId);
+    });
+  }
+
+  toggleComplete(todoId, completed) {
+    this._todosService.toggleComplete(todoId, completed).subscribe((res) => {
+      this.isComplete = res;
+      console.log(this.isComplete.completed);
     });
   }
 }
